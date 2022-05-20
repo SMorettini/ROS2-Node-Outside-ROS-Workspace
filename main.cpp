@@ -4,8 +4,10 @@
 #include <string>
 
 
-#include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
+#include <rclcpp/rclcpp.hpp>
+#include <std_msgs/msg/string.hpp>
+
+#include <trajectory_msgs/msg/joint_trajectory.hpp>
 
 class MyNode : public rclcpp::Node
 {
@@ -15,7 +17,7 @@ public:
         timer_ = this->create_wall_timer(
             std::chrono::milliseconds(500),
             std::bind(&MyNode::timerCallback, this));
-        publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
+        publisher_ = this->create_publisher<std_msgs::msg::String>("hello_world_topic", 10);
     }
 private:
     void timerCallback()
