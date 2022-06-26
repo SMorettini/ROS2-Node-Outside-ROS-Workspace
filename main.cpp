@@ -7,8 +7,6 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
-#include <trajectory_msgs/msg/joint_trajectory.hpp>
-
 class MyNode : public rclcpp::Node
 {
 public:
